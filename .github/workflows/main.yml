@@ -10,11 +10,14 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: ssh
-        env:
-          SECRET_KEY: ${{ secrets.SECRET_KEY }}
-          USER: ${{ secrets.DEPLOY_USER_SERVER }}
-          HOST: ${{ secrets.DEPLOY_HOST_SERVER }}
-          PORT: ${{ secrets.DEPLOY_PORT_SERVER }}
-          KEY: ${{ secrets.DEPLOY_KEY_SERVER }}
-          PATH: public_html/test_yamauchi/
+      - uses: actions/checkout@v2
+      - name: Install SSH Key for Deploy
+        uses: appleboy/ssh-action@master
+        with:
+          key: ${{ secrets.DEPLOY_KEY_SERVER_KIR951 }}
+          username: ${{ secrets.DEPLOY_USER_SERVER_KIR951 }}
+          host: ${{ secrets.DEPLOY_HOST_SERVER_KIR951 }}
+          port: ${{ secrets.DEPLOY_PORT_SERVER }}
+          script: |
+            cd /public_html/test_yamauchi/
+            git pull
