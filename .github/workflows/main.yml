@@ -18,9 +18,3 @@ jobs:
           PORT: ${{ secrets.DEPLOY_PORT_SERVER }}
           KEY: ${{ secrets.DEPLOY_KEY_SERVER }}
           PATH: public_html/test_yamauchi/
-
-
-
-
-        
-        
