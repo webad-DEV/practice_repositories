@@ -1,0 +1,26 @@
+name: Deploy to kir951
+on:
+  push:
+    branches: main
+
+env:
+  test_name: my-test
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ssh
+        env:
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
+          USER: ${{ secrets.DEPLOY_USER_SERVER }}
+          HOST: ${{ secrets.DEPLOY_HOST_SERVER }}
+          PORT: ${{ secrets.DEPLOY_PORT_SERVER }}
+          KEY: ${{ secrets.DEPLOY_KEY_SERVER }}
+          PATH: public_html/test_yamauchi/
+
+
+
+
+        
+        
