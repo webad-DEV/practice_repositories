@@ -25,4 +25,4 @@ jobs:
 #            git pull origin main
           script: |
             cd public_html/test_yamauchi
-            git remote -v
+            git pull origin main
