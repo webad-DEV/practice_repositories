@@ -22,10 +22,7 @@ jobs:
           key: ${{ secrets.DEPLOY_KEY_KIR951 }}
           known_hosts: o5044-691.kagoya.net
       - name: rsync deploy
-        run: rsync -vrlp -e "ssh -p 10022 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" ./ kir951032@o5044-691.kagoya.net:/public_html/test_yamauchi/
-
-          echo Add other actions to build,
-          echo test, and deploy your project.
+        run: ls -al
 
 
 
