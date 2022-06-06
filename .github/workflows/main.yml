@@ -9,13 +9,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
       - name: Install SSH Key for Deploy
-      uses: shimataro/ssh-key-action@v2
-      with:
-        key: ${{ secrets.DEPLOY_KEY_KIR951 }}
-        known_hosts: ${{ secrets.DEPLOY_HOST_KIR951 }}
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.DEPLOY_KEY_KIR951 }}
+          known_hosts: ${{ secrets.DEPLOY_HOST_KIR951 }}
       - name: rsync deploy
-      run: rsync -vrlp -e "ssh -p ${{ secrets.PORT_KAGOYA }} -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" ./ ${{ secrets.DEPLOY_USER_KIR951 }}@${{ secrets.DEPLOY_HOST_KIR951 }}:/public_html/test_yamauchi/
+        run: rsync -vrlp -e "ssh -p ${{ secrets.PORT_KAGOYA }} -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" ./ ${{ secrets.DEPLOY_USER_KIR951 }}@${{ secrets.DEPLOY_HOST_KIR951 }}:/public_html/test_yamauchi/
