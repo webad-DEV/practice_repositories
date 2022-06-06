@@ -19,10 +19,10 @@ jobs:
           key: ${{ secrets.DEPLOY_KEY_KIR951 }}
           host: ${{ secrets.DEPLOY_HOST_KIR951 }}
           username: ${{ secrets.DEPLOY_USER_KIR951 }}
-          port: 10022
+          port: ${{ secrets.PORT_KAGOYA }}
 #          script: |
 #            cd /public_html/test_yamauchi/
 #            git pull origin main
           script: |
-            whoami
+            pwd
             ls -al
