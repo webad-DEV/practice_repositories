@@ -24,5 +24,5 @@ jobs:
 #            cd /public_html/test_yamauchi/
 #            git pull origin main
           script: |
-            pwd
-            ls -al
+            cd public_html/
+            git pull origin main
