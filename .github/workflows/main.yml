@@ -23,4 +23,6 @@ jobs:
 #          script: |
 #            cd /public_html/test_yamauchi/
 #            git pull origin main
-          script: whois
+          script: |
+            whoami
+            ls -al
