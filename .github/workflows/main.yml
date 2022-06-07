@@ -1,28 +1,21 @@
 name: Deploy to kir951
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   pull_request:
     branches: [ main ]
-
-env:
-  test_name: my-Deploy
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Install SSH Key for Deploy
-        uses: appleboy/ssh-action@master
-        with:
-          key: ${{ secrets.DEPLOY_KEY_KIR951 }}
-          host: ${{ secrets.DEPLOY_HOST_KIR951 }}
-          username: ${{ secrets.DEPLOY_USER_KIR951 }}
-          port: ${{ secrets.PORT_KAGOYA }}
-#          script: |
-#            cd /public_html/test_yamauchi/
-#            git pull origin main
-          script: |
-            cd public_html/test_yamauchi
-            git pull origin main
+
+      - name: ssh
+        env:
+          SECRET_KEY: ${{ secrets.DEPLOY_KEY_KIR951 }}
+          USER: ${{ secrets.DEPLOY_USER_KIR951 }}
+          HOST: ${{ secrets.DEPLOY_HOST_KIR951 }}
+        run: | 
+            echo "$SECRET_KEY" > secret_key
+            chmod 600 secret_key
+            ssh ${PORT_KAGOYA} -oStrictHostKeyChecking=no ${DEPLOY_USER_KIR951}@${DEPLOY_HOST_KIR951} -i secret_key "cd public_html/ && sh ./.github/workflows/deploy.sh"
