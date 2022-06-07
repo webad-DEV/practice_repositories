@@ -1,12 +1,12 @@
 name: Deploy
 
 on:
+  workflow_dispatch:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
 
-  workflow_dispatch:
 
 jobs:
   build:
@@ -21,6 +21,6 @@ jobs:
           key: ${{ secrets.DEPLOY_KEY_KIR951 }}
           known_hosts: ${{ secrets.DEPLOY_HOST_KIR951 }}
       - name: rsync deploy
-        run: rsync -vcrlp -e "ssh -p ${{ secrets.PORT_KAGOYA }} -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" ./ ${{ secrets.DEPLOY_USER_KIR951 }}@${{ secrets.DEPLOY_HOST_KIR951 }}:public_html/test_yamauchi/*/*/
+        run: rsync -vcrlp -e "ssh -p ${{ secrets.PORT_KAGOYA }} -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" ./ ${{ secrets.DEPLOY_USER_KIR951 }}@${{ secrets.DEPLOY_HOST_KIR951 }}:public_html/test_yamauchi/
 
 
