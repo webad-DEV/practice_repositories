@@ -20,8 +20,6 @@ jobs:
           key: ${{ secrets.DEPLOY_KEY_KIR951 }}
           script: |
             cd public_html/test_yamauchi/
-            git remote set-url origin git@github.com:webad-DEV/test_yamauchi.git
             git remote -v
-            git pull origin main
 
 
