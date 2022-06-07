@@ -32,7 +32,7 @@ jobs:
           key: ${{ secrets.DEPLOY_KEY_KIR951 }}
           known_hosts: ${{ secrets.DEPLOY_HOST_KIR951 }}
       - name: rsync deploy
-        run: rsync -vrlp -e "ssh -p 10022 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" ./ ${{ secrets.DEPLOY_USER_KIR951 }}@${{ secrets.DEPLOY_HOST_KIR951 }}:kir951032/public_html/
+        run: rsync -vrlp -e "ssh -p 10022 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" ./ ${{ secrets.DEPLOY_USER_KIR951 }}@${{ secrets.DEPLOY_HOST_KIR951 }}:kir951032/public_html/test_yamauchi/
 
           echo Add other actions to build,
           echo test, and deploy your project.
