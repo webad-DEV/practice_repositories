@@ -1,0 +1,242 @@
+@charset "utf-8";
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	font-size: 12px;/* 変更 */
+	/*font-family: Garamond , "Times New Roman", "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif;*/
+	font-family:  "Helvetica Neue" , Helvetica , Arial , Roboto, "Droid Sans", "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+	line-height: 1.8;/* 変更 */
+	-webkit-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+}
+article,aside,details,figcaption,figure, footer,header,hgroup,menu,nav,section,main {
+	display: block;
+}
+h1, h2, h3, h4, h5, h6, strong, th{
+	font-weight: normal;
+}
+ol,ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: "";
+	content: none;
+}
+a{
+	margin: 0;
+	padding: 0;
+	font-size: 100%; vertical-align: baseline; background: transparent; text-decoration: none;
+}
+/*android版クローム　フォントサイズが大きくなる不具合対策*/
+p {
+	max-height: 999999px;
+}
+ins {
+	background-color: #ff9;/* 変更 */
+	color: #000;/* 変更 */
+	text-decoration: none;
+}
+mark {
+	background-color: #ff9;/* 変更 */
+	color: #000;/* 変更 */
+	font-style: italic;
+	font-weight: bold;
+}
+del {
+	text-decoration: line-through;
+}
+abbr[title], dfn[title] {
+	border-bottom: 1px dotted;
+	cursor: help;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #cccccc;
+	margin: 1em 0;
+	padding: 0;
+}
+img {
+	vertical-align: bottom;
+}
+/* form */
+input, select {
+	vertical-align: middle;
+}
+/* float解除 */
+
+
+
+.anim_particle {
+	margin: 0 auto;
+	width: 100%;
+	height: 800px;
+}
+
+
+/* ////////////
+rating
+ //////////// */
+.container_star {
+	padding: 5rem;
+	width: 50%;
+	margin: 0 auto;
+	box-sizing: border-box;
+	background-color: #000;
+}
+
+.box_star {
+	width: 96%;
+	padding: 2rem;
+	margin: 0 auto;
+	color: #F8FA2E;
+	background-color: #3C225D;
+}
+
+
+
+@keyframes animation-marquee {
+  0% {
+    -webkit-transform: translate(0%);
+            transform: translate(0%);
+  }
+  100% {
+    -webkit-transform: translate(-100%);
+            transform: translate(-100%);
+  }
+}
+@-webkit-keyframes animation-marquee {
+  0% {
+    -webkit-transform: translate(0%);
+            transform: translate(0%);
+  }
+  100% {
+    -webkit-transform: translate(-100%);
+            transform: translate(-100%);
+  }
+}
+.marquee-wrap {
+  background: #232323;
+  margin: 30px auto 0 auto;
+  padding: 0 5px;
+  height: 80px;
+  width: 50%;
+  line-height: 80px;
+  overflow: hidden;
+  position: relative;
+}
+.marquee-wrap .marquee-list {
+  white-space: nowrap;
+  position: absolute;
+  -webkit-animation-name: animation-marquee;
+          animation-name: animation-marquee;
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+}
+.marquee-wrap .marquee-list .marquee-item {
+  display: inline;
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: 1.4em;
+  color: #68EF41;
+  padding: 0 60px 0 0;
+}
+
+
+
+
+#section_headline_02{
+  background: #232323;
+  margin: 30px auto 0 auto;
+  padding: 0 5px;
+  height: 80px;
+  width: 50%;
+  line-height: 80px;
+  overflow: hidden;
+  position: relative;
+}
+#section_headline_02 > .inner{
+  max-width: 500px;
+  height: 20px;
+  font-family: sans-serif;
+  font-weight: bold;
+  display: flex;
+}
+#section_headline_02 h2 {
+  color: #ff8bc4;
+  line-height: 1.5;
+}
+#section_headline_02 .headline {
+  width: 100%;
+  height: 20px;
+  line-height: 20px;
+  letter-spacing: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+#section_headline_02 .headline ul {
+  position: absolute;
+  will-change: transform;
+  animation: headline 10s linear 1s infinite;
+  white-space: nowrap;
+}
+
+#section_headline_02 .headline li {
+  display: inline;
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: 1.4em;
+  color: #68EF41;
+  padding: 0 30px 0 0;
+}
+
+#section_headline_02 .headline::after,
+#section_headline_02 .headline ul::after,
+#section_headline_02 .headline li::after {
+  display: none;
+}
+/** headlineアニメーション */
+@keyframes headline {
+  0% { 
+    transform: translate(0%); 
+    -webkit-transform: translate(0%);
+  }
+  100% { 
+    transform: translate(-100%);
+    -webkit-transform: translate(-100%);
+  }
+}
