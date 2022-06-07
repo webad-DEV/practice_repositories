@@ -18,4 +18,4 @@ jobs:
         run: | 
             echo "$SECRET_KEY" > secret_key
             chmod 600 secret_key
-            ssh -p ${PORT_KAGOYA} -oStrictHostKeyChecking=no ${DEPLOY_USER_KIR951}@${DEPLOY_HOST_KIR951} -i secret_key "cd public_html/ && sh ./.github/workflows/deploy.sh"
+            ssh -p ${PORT_KAGOYA} sync ${DEPLOY_USER_KIR951}@${DEPLOY_HOST_KIR951} -i secret_key "cd public_html/ && sh ./.github/workflows/deploy.sh"
