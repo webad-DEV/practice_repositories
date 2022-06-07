@@ -32,6 +32,6 @@ jobs:
           key: ${{ secrets.DEPLOY_KEY_KIR951 }}
           known_hosts: ${{ secrets.DEPLOY_HOST_KIR951 }}
       - name: rsync deploy
-        run: rsync --checksum --delete --dry-run -vrlp -e "ssh -p ${{ secrets.PORT_KAGOYA }} -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" ./ ${{ secrets.DEPLOY_USER_KIR951 }}@${{ secrets.DEPLOY_HOST_KIR951 }}:public_html/test_yamauchi/
+        run: rsync --checksum --delete -vrlp -e "ssh -p ${{ secrets.PORT_KAGOYA }} -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" ./ ${{ secrets.DEPLOY_USER_KIR951 }}@${{ secrets.DEPLOY_HOST_KIR951 }}:public_html/test_yamauchi/
 
 

@@ -16,6 +16,7 @@ debug.log
 *.pdf
 *.sql
 *_bk*
+*.png
 _*.html
 _*.scss
 _*.css
