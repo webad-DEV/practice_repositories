@@ -27,9 +27,6 @@ _*.png
 _*.gif
 _*.txt
 _*.xml
-_delete/
-__delete/
-___delete/
-____delete/
-_del/
+_*delete/
+_*del/
 .idea
