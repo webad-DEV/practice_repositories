@@ -21,7 +21,6 @@ jobs:
           script: |
             cd ./public_html/test_yamauchi/
             git remote -v
-            ls
             git pull origin main 
 
 
