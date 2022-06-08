@@ -19,7 +19,7 @@ jobs:
           port: ${{ secrets.PORT_KAGOYA }}
           key: ${{ secrets.DEPLOY_KEY_KIR951 }}
           script: |
-            cd public_html/test_yamauchi/
+            cd ./public_html/test_yamauchi/
             git pull origin main
 
 
