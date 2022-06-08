@@ -20,5 +20,7 @@ jobs:
           key: ${{ secrets.DEPLOY_KEY_KIR951 }}
           script: |
             cd ./public_html/test_yamauchi/
-            ls
+            pwd
             git pull origin main 
+
+
